@@ -24,3 +24,4 @@ Things you may want to cover:
 * ...
 # Paint
 Your app description, here.
+# paint-for-paint-god
