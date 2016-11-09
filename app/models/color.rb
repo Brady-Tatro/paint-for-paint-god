@@ -1,4 +1,4 @@
-class Colors < ApplicationRecord
+class Color < ActiveRecord::Base
 
   validates :name, presence: true
 
