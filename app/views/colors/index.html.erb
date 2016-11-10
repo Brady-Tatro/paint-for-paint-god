@@ -1,3 +1,5 @@
 <div>
-<h1>Colors</h1>
+  <% @colors.each do |color| %>
+    <ul style="background-color: <%= color.hex %>"><%= color.name %> <%= color.hex %></ul>
+    <% end %>
 </div>
