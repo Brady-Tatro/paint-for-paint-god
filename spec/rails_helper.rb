@@ -1,4 +1,3 @@
-include Warden::Test::Helpers
 require 'capybara/rails'
 require_relative 'support/factory_girl'
 require 'database_cleaner'
@@ -29,25 +28,6 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
-
-RSpec.configure do |config|
-  config.include Warden::Test::Helpers
-  config.before :suite do
-    Warden.test_mode!
-  end
-  config.after :suite do
-    Warden.test_reset!
-  end
-end
-
-RSpec.configure do |config|
-  config.before :each do
-    Warden.test_mode!
-  end
-  config.after :each do
-    Warden.test_reset!
-  end
-end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
