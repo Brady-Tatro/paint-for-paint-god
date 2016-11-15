@@ -7,8 +7,10 @@ describe Color do
   end
   it "should not be valid without a name" do
     color = Color.new(name: "")
+    expect(color).to_not be_valid
   end
   it "should not be valid with an invalid hex" do
     color = Color.new(name: "Abaddon Black", hex: '###')
+    expect(color).to_not be_valid
   end
 end
