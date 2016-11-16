@@ -1,0 +1,15 @@
+<h1> Please fill out all fields marked required </h1>
+
+<%= form_for (@picture) do |f| %>
+<h4><%= "Select the army the model belongs to. REQUIRED" %></h4>
+  <%= f.radio_button :army, "Necrons" %>
+  <%= f.label "Necrons" %>
+  <%= f.radio_button :army, "Raven Guard" %>
+  <%= f.label "Raven Guard" %>
+  <% paints = Color.all %>
+  <% @paint_name = [] %>
+    <% paints.each do |paint| %>
+    <% @paint_name << paint.name %>
+  <% end %>
+  <%= f.select :base, options_for_select(@paint_name) %>
+<% end %>
