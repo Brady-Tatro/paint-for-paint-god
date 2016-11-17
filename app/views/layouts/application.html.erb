@@ -12,7 +12,14 @@
   </head>
 
   <body>
-
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pictures">See All Miniatures</a></li>
+      <li><a href="/pictures/new">Add a Miniature</a></li>
+    </ul>
+    <% flash.each do |key, value| %>
+          <%= value %>
+        <% end %>
     <%= yield %>
 
   </body>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110183740) do
+ActiveRecord::Schema.define(version: 20161115173508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20161110183740) do
     t.boolean "highlight",           default: false
     t.boolean "secondary_highlight", default: false
     t.string  "hex"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "army",             null: false
+    t.string "primer",           null: false
+    t.string "base",             null: false
+    t.string "second_base"
+    t.string "third_base"
+    t.string "highlight",        null: false
+    t.string "second_highlight"
+    t.string "third_highlight"
+    t.string "shade",            null: false
+    t.string "second_shade"
   end
 
 end
