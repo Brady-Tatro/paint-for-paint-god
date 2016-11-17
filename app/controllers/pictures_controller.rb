@@ -13,7 +13,22 @@ class PicturesController < ApplicationController
   end
 
   def create
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      flash[:notice] = "Miniature added successfully"
+      render 'new'
+    else
+      flash[:notice] = @picture.errors.full_messages.join(",")
+      render 'new'
+    end
 
+  end
+
+
+  private
+
+  def picture_params
+    params.require(:picture).permit(:army, :primer, :base, :highlight, :shade)
   end
 
 end

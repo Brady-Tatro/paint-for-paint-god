@@ -6,10 +6,23 @@
   <%= f.label "Necrons" %>
   <%= f.radio_button :army, "Raven Guard" %>
   <%= f.label "Raven Guard" %>
+
   <% paints = Color.all %>
-  <% @paint_name = [] %>
+  <% @paint_name = ["None"] %>
     <% paints.each do |paint| %>
     <% @paint_name << paint.name %>
   <% end %>
-  <%= f.select :base, options_for_select(@paint_name) %>
+  <div><%= f.select :primer, options_for_select(@paint_name) %>
+  <%= f.label "Primer" %></div>
+
+  <div><%= f.select :base, options_for_select(@paint_name) %>
+  <%= f.label "Base Paint" %></div>
+
+  <div><%= f.select :highlight, options_for_select(@paint_name) %>
+  <%= f.label "Highlight" %></div>
+
+  <div><%= f.select :shade, options_for_select(@paint_name) %>
+  <%= f.label "Shade" %></div>
+
+  <div> <%= f.submit "Add Miniature" %></div>
 <% end %>
