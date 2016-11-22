@@ -1,7 +1,14 @@
 class PicturesController < ApplicationController
 
   def index
+    @colors = Color.all
     @pictures = Picture.all
+    if params[:search]
+      @pictures = Picture.find(params[:search])
+
+    else
+      @pictures = Picture.all
+    end
   end
 
   def show
@@ -28,7 +35,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:army, :primer, :base, :highlight, :shade)
+    params.require(:picture).permit(:army, :primer, :base, :highlight, :shade, :search)
   end
 
 end
