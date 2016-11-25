@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
     @colors = Color.all
     @pictures = Picture.all
     if params[:search]
-      @pictures = Picture.find(params[:search])
+      @pictures = Picture.search(params[:search])
 
     else
       @pictures = Picture.all
