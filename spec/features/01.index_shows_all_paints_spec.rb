@@ -9,9 +9,7 @@ feature 'All Paint colors are shown' do
     end
     scenario 'all color names are on page' do
       expect(page).to have_content(color1.name)
-      expect(page).to have_content(color1.hex)
       expect(page).to have_content(color2.name)
-      expect(page).to have_content(color2.hex)
     end
   end
 end

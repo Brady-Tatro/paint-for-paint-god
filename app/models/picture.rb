@@ -6,4 +6,7 @@ class Picture < ActiveRecord::Base
   validates :highlight, presence: true
   validates :shade, presence: true
 
+  def self.search(search)
+    where("army LIKE ? OR primer LIKE ? OR base LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end
