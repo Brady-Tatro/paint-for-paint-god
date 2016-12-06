@@ -35,7 +35,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:army, :primer, :base, :highlight, :shade, :search)
+    params.require(:picture).permit(:army, :primer, :base, :highlight, :shade, :search, :photo)
   end
 
 end
