@@ -1,5 +1,7 @@
 class Picture < ActiveRecord::Base
 
+  mount_uploader :photo, ModelPhotoUploader
+
   validates :army, presence: true
   validates :primer, presence: true
   validates :base, presence: true

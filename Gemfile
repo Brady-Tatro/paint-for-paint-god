@@ -7,6 +7,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'listen'
 gem 'foundation-rails'
+gem "carrierwave"
+gem 'fog'
 
 group :development, :test do
   gem 'capybara'
@@ -15,6 +17,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem "dotenv-rails"
 end
 
 group :test do
