@@ -1,6 +1,7 @@
 <h1> Please fill out all fields marked required </h1>
 
 <%= form_for (@picture) do |f| %>
+<h4><%= f.file_field :photo %></h4>
 <h4><%= "Select the army the model belongs to. REQUIRED" %></h4>
   <%= f.radio_button :army, "Necrons" %>
   <%= f.label "Necrons" %>

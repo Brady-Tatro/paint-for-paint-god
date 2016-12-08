@@ -1,5 +1,5 @@
 <div>
   <% @pictures.each do |picture| %>
-  <ul><%= picture.army %> <%= picture.primer %> <%= picture.base %></ul>
+    <ul><%= image_tag(picture.photo) %><%= picture.army %> <%= picture.primer %> <%= picture.base %></ul>
   <% end %>
 </div>
