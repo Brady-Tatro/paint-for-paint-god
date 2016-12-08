@@ -7,3 +7,12 @@
   <%= submit_tag "Search", :name => nil %>
   <% end %>
 </div>
+<div>
+  <% paints = Color.all %>
+  <% @paint_name = ["None"] %>
+  <% paints.each do |paint| %>
+    <% @paint_name << paint.name %>
+  <% end %>
+  <%= select :primer, options_for_select(@paint_name) %>
+
+</div>
